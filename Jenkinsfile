@@ -10,7 +10,8 @@ pipeline {
 
         stage('Selenium') {
             steps {
-                
+                //Run converted Selenium IDE recording to python pytest
+                // Selenium IDE -> Record test -> Click Export -> Choose python -> Run converted recording file with pytest
             }
         }
 

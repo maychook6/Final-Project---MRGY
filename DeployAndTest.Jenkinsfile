@@ -6,7 +6,6 @@ pipeline {
             when {
                 anyOf {
                     changeset "OurApp/index.jsp"
-                    changeset "Jenkinsfile"
                 }
             }
             stages {

@@ -1,0 +1,213 @@
+{
+  "id": "aa2e4580-886f-4fb7-84bb-095591856b61",
+  "version": "2.0",
+  "name": "Final Project DevOps",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "442f8fd0-d92b-4a33-b93e-58ff447733d6",
+    "name": "Finel Project Test",
+    "commands": [{
+      "id": "5523f511-548c-4790-8628-16e6e202f58c",
+      "comment": "",
+      "command": "open",
+      "target": "/OurApp/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cdd30b87-adb8-4742-b943-fbe38faf28d7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1058x804",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "862c716e-75b2-494b-80f8-c70522defad8",
+      "comment": "",
+      "command": "click",
+      "target": "id=gil_in",
+      "targets": [
+        ["id=gil_in", "id"],
+        ["css=#gil_in", "css:finder"],
+        ["xpath=//input[@id='gil_in']", "xpath:attributes"],
+        ["xpath=//ul[@id='checkList']/li/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c4532de-c168-4e85-9042-aac630e44ccd",
+      "comment": "",
+      "command": "type",
+      "target": "id=gil_in",
+      "targets": [
+        ["id=gil_in", "id"],
+        ["css=#gil_in", "css:finder"],
+        ["xpath=//input[@id='gil_in']", "xpath:attributes"],
+        ["xpath=//ul[@id='checkList']/li/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "100"
+    }, {
+      "id": "1edb6d00-8a87-44ec-b127-374a25e8722f",
+      "comment": "",
+      "command": "click",
+      "target": "id=gil_btn",
+      "targets": [
+        ["id=gil_btn", "id"],
+        ["css=#gil_btn", "css:finder"],
+        ["xpath=//button[@id='gil_btn']", "xpath:attributes"],
+        ["xpath=//ul[@id='checkList']/li/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Save Grade')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "35175331-8da3-4b67-a01a-fa5bd1c1376b",
+      "comment": "Gil grade should be 100",
+      "command": "assertText",
+      "target": "id=gil_grade",
+      "targets": [],
+      "value": "100"
+    }, {
+      "id": "517c6544-0497-4037-a078-b006f2e9f2e0",
+      "comment": "",
+      "command": "click",
+      "target": "id=may_in",
+      "targets": [
+        ["id=may_in", "id"],
+        ["css=#may_in", "css:finder"],
+        ["xpath=//input[@id='may_in']", "xpath:attributes"],
+        ["xpath=//ul[@id='checkList']/li[2]/input", "xpath:idRelative"],
+        ["xpath=//li[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "62b02443-62ad-474d-8df4-d657b93e97e6",
+      "comment": "",
+      "command": "type",
+      "target": "id=may_in",
+      "targets": [
+        ["id=may_in", "id"],
+        ["css=#may_in", "css:finder"],
+        ["xpath=//input[@id='may_in']", "xpath:attributes"],
+        ["xpath=//ul[@id='checkList']/li[2]/input", "xpath:idRelative"],
+        ["xpath=//li[2]/input", "xpath:position"]
+      ],
+      "value": "100"
+    }, {
+      "id": "238e90a4-877f-4996-95ec-55ee12fcfcff",
+      "comment": "",
+      "command": "click",
+      "target": "id=may_btn",
+      "targets": [
+        ["id=may_btn", "id"],
+        ["css=#may_btn", "css:finder"],
+        ["xpath=//button[@id='may_btn']", "xpath:attributes"],
+        ["xpath=//ul[@id='checkList']/li[2]/button", "xpath:idRelative"],
+        ["xpath=//li[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b257b70-0ea6-4d10-8d0d-fe8dd332e46e",
+      "comment": "May grade should be 100",
+      "command": "assertText",
+      "target": "id=may_grade",
+      "targets": [],
+      "value": "100"
+    }, {
+      "id": "1c27109b-17d6-4ad3-8de6-7f8fe53ba9f7",
+      "comment": "",
+      "command": "click",
+      "target": "id=reuven_in",
+      "targets": [
+        ["id=reuven_in", "id"],
+        ["css=#reuven_in", "css:finder"],
+        ["xpath=//input[@id='reuven_in']", "xpath:attributes"],
+        ["xpath=//ul[@id='checkList']/li[3]/input", "xpath:idRelative"],
+        ["xpath=//li[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2544d72-9bb9-4be9-9ae3-25760733104a",
+      "comment": "",
+      "command": "type",
+      "target": "id=reuven_in",
+      "targets": [
+        ["id=reuven_in", "id"],
+        ["css=#reuven_in", "css:finder"],
+        ["xpath=//input[@id='reuven_in']", "xpath:attributes"],
+        ["xpath=//ul[@id='checkList']/li[3]/input", "xpath:idRelative"],
+        ["xpath=//li[3]/input", "xpath:position"]
+      ],
+      "value": "100"
+    }, {
+      "id": "7c65ca23-37bc-4a30-9771-ce4b8dfc6693",
+      "comment": "",
+      "command": "click",
+      "target": "id=reuven_btn",
+      "targets": [
+        ["id=reuven_btn", "id"],
+        ["css=#reuven_btn", "css:finder"],
+        ["xpath=//button[@id='reuven_btn']", "xpath:attributes"],
+        ["xpath=//ul[@id='checkList']/li[3]/button", "xpath:idRelative"],
+        ["xpath=//li[3]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f0c238d3-395f-4b2a-a82d-36040ec33c10",
+      "comment": "Reuven grade should be 100",
+      "command": "assertText",
+      "target": "id=reuven_grade",
+      "targets": [],
+      "value": "100"
+    }, {
+      "id": "f9acc7f7-3bc6-41ee-a2ad-efa6996b6e7a",
+      "comment": "",
+      "command": "click",
+      "target": "id=yair_in",
+      "targets": [
+        ["id=yair_in", "id"],
+        ["css=#yair_in", "css:finder"],
+        ["xpath=//input[@id='yair_in']", "xpath:attributes"],
+        ["xpath=//ul[@id='checkList']/li[4]/input", "xpath:idRelative"],
+        ["xpath=//li[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2cfbc85-3074-44e9-acf4-ae68e0335599",
+      "comment": "",
+      "command": "type",
+      "target": "id=yair_in",
+      "targets": [
+        ["id=yair_in", "id"],
+        ["css=#yair_in", "css:finder"],
+        ["xpath=//input[@id='yair_in']", "xpath:attributes"],
+        ["xpath=//ul[@id='checkList']/li[4]/input", "xpath:idRelative"],
+        ["xpath=//li[4]/input", "xpath:position"]
+      ],
+      "value": "100"
+    }, {
+      "id": "fc39ce1f-13dc-448e-a4db-5982b3e9c922",
+      "comment": "",
+      "command": "click",
+      "target": "id=yair_btn",
+      "targets": [
+        ["id=yair_btn", "id"],
+        ["css=#yair_btn", "css:finder"],
+        ["xpath=//button[@id='yair_btn']", "xpath:attributes"],
+        ["xpath=//ul[@id='checkList']/li[4]/button", "xpath:idRelative"],
+        ["xpath=//li[4]/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "252c238b-14a3-446f-b9a2-9ace24d90990",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["442f8fd0-d92b-4a33-b93e-58ff447733d6"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}

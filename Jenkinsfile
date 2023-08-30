@@ -35,10 +35,10 @@ pipeline {
                         sh '''
                             # copy stress simulation file from repo 
                             cp -f simulations/StressSimulation.java ~/Downloads/gatling-charts-highcharts-bundle-3.9.5/user-files/simulations
-                        '''
-                        dir('~/Downloads/gatling-charts-highcharts-bundle-3.9.5/bin') {
-                            sh './gatling.sh -rm local -s StressSimulation'
-                        }
+                            cd '~/Downloads/gatling-charts-highcharts-bundle-3.9.5/bin'
+                            sh './gatling.sh -rm local -s StressSimulation
+                            '''
+                        
                     }
                 }
             }

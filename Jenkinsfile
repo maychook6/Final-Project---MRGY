@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Set Execution') {
             when {
-                changeset "OurApp/index.jsp"
+                anyOf {
+                    changeset "OurApp/index.jsp"
+                    changeset "Jenkinsfile"
+                }
             }
             stages {
                stage('Deploy') {
@@ -12,12 +15,12 @@ pipeline {
                         sh 'cp -R -f OurApp ~/Downloads/apache-tomcat-8.5.92/webapps'
                     }
                 }
-                stage('Selenium') {
-                    steps {
-                        //Run converted Selenium IDE recording to python pytest
-                        //Selenium IDE -> Record test -> Click Export -> Choose python -> Run converted recording file with pytest
-                    }
-                }
+                // stage('Selenium') {
+                //     steps {
+                //         //Run converted Selenium IDE recording to python pytest
+                //         //Selenium IDE -> Record test -> Click Export -> Choose python -> Run converted recording file with pytest
+                //     }
+                // }
                 stage('Load Test') {
                     steps {
                         sh '''

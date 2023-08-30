@@ -30,7 +30,7 @@ pipeline {
                 sh '''
                      cp -f simulations/StressSimulation.java ~/Downloads/gatling-charts-highcharts-bundle-3.9.5/user-files/simulations
                      cd ~/Downloads/gatling-charts-highcharts-bundle-3.9.5/bin
-                     ./gatling.sh -rm local -s LoadSimulation
+                     ./gatling.sh -rm local -s StressSimulation
                    '''
             }
         }

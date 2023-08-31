@@ -16,7 +16,10 @@ pipeline {
                 }
                 stage('Selenium') {
                     steps {
-                        sh 'python3 pytest test_finelProjectTest.py'
+                        sh '''
+                            pip3 install pytest
+                            pytest test_finelProjectTest.py
+                            '''
                     }
                 }
                 stage('Load Test') {

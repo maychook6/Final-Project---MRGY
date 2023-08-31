@@ -40,7 +40,7 @@
 </head>
 <body>
     <header>
-        <h1>Visit Our Git Website</h1>
+        <h1 id="MRGY">Visit Our Git Website</h1>
         <nav>
             <ul>
                 <li><a href="https://github.com/GilEmanuel22">Gil Emanuel</a></li>

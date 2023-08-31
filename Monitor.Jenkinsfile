@@ -4,10 +4,12 @@ pipeline {
     stages {
         stage('Monitor') {
             steps {
-                if (statusCode != '200') {
-                    sh "exit 1"
-                } else {
-                        sh 'curl -I -s -o output.txt http://localhost:8000/OurApp/'
+                script {
+                    if (statusCode != '200') {
+                        sh "exit 1"
+                    } else {
+                            sh 'curl -I -s -o output.txt http://localhost:8000/OurApp/'
+                    }
                 }
             }
         }

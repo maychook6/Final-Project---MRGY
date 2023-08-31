@@ -2,11 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('UpTimeRobot Test') {
+        stage('Monitor') {
+            when {
+                
+            }
                 steps {
-                    sh 'python Monitor.py'
-                }
+                    script {
+                        if (runShell('grep \'200\' output.txt')) {
+                        sh "exit 1"
+                    }
 
+                    }
+                    sh 'curl -I -s -o output.txt http://localhost:8000/OurApp/'
+                }
             }
         }
     }

@@ -18,7 +18,7 @@ pipeline {
                     steps {
                         sh '''
                             pip3 install pytest
-                            pytest test_finelProjectTest.py
+                            python3 pytest test_finelProjectTest.py
                             '''
                     }
                 }

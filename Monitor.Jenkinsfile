@@ -5,7 +5,7 @@ pipeline {
         stage('Monitor') {
             steps {
                 script {
-                    if (statusCode != '200') {
+                    if (statusCode != 200) {
                         sh "exit 1"
                     } else {
                             sh 'curl -I -s -o output.txt http://localhost:8000/OurApp/'

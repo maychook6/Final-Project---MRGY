@@ -10,24 +10,22 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.firefox.options import Options
 
 class TestFinelProjectTest():
   def setup_method(self, method):
     self.driver = webdriver.Chrome()
     self.vars = {}
   
-  def teardown_method(self, method):
-    self.driver.quit()
-  
   def test_finelProjectTest(self):
-    self.driver.get("http://localhost:8080/OurApp/")
+    self.driver.get("http://localhost:8000/OurApp/")
     try:
-      element = WebDriverWait(driver, 10).until(
+      element = WebDriverWait(self.driver, 10).until(
           EC.presence_of_element_located((By.ID, "MRGY"))
       )
     except: 
-      self.driver.quit()
-      
+      WebDriverWait(self.driver,10)
+
     self.driver.set_window_size(1058, 804)
     self.driver.find_element(By.ID, "gil_in").click()
     self.driver.find_element(By.ID, "gil_in").send_keys("100")
@@ -44,4 +42,6 @@ class TestFinelProjectTest():
     self.driver.find_element(By.ID, "yair_in").click()
     self.driver.find_element(By.ID, "yair_in").send_keys("100")
     self.driver.find_element(By.ID, "yair_btn").click()
-  
+
+  def teardown_method(self, method):
+    self.driver.quit()  

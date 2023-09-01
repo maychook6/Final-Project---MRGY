@@ -28,7 +28,7 @@ pipeline {
                             cp -f simulations/LoadSimulation.java ~/Downloads/gatling-charts-highcharts-bundle-3.9.5/user-files/simulations
                             cd ~/Downloads/gatling-charts-highcharts-bundle-3.9.5/bin
                             ./gatling.sh -rm local -s LoadSimulation
-                            cd ~/Downloads/gatling-charts-highcharts-bundle-3.9.5/user-files
+                            cd ~/Downloads/gatling-charts-highcharts-bundle-3.9.5/results
                             fileName=$(ls -ltr -1 | tail -1)
                             mv $fileName May_Robi_Gil_Yair_LOAD
                         '''
@@ -41,7 +41,7 @@ pipeline {
                             cp -f simulations/StressSimulation.java ~/Downloads/gatling-charts-highcharts-bundle-3.9.5/user-files/simulations
                             cd ~/Downloads/gatling-charts-highcharts-bundle-3.9.5/bin
                             ./gatling.sh -rm local -s StressSimulation
-                            cd ~/Downloads/gatling-charts-highcharts-bundle-3.9.5/user-files
+                            cd ~/Downloads/gatling-charts-highcharts-bundle-3.9.5/results
                             fileName=$(ls -ltr -1 | tail -1)
                             mv $fileName May_Robi_Gil_Yair_STRESS
                             '''

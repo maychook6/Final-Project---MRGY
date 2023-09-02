@@ -156,7 +156,7 @@ public class LoadSimulation extends Simulation {
                                                 .get(uri3 + "/91782705?v=4")
                                                 .headers(headers_1)
                                 )
-                );
+                ).pause(120);
 
         setUp(scn.injectOpen(rampUsers(63).during(120)).protocols(httpProtocol));
 

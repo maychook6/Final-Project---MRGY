@@ -5,13 +5,14 @@ import java.util.*;
 import io.gatling.javaapi.core.*;
 import io.gatling.javaapi.http.*;
 import io.gatling.javaapi.jdbc.*;
+import io.gatling.core.Predef.*;
+
 
 import static io.gatling.javaapi.core.CoreDsl.*;
 import static io.gatling.javaapi.http.HttpDsl.*;
 import static io.gatling.javaapi.jdbc.JdbcDsl.*;
 
 public class StressSimulation extends Simulation {
-
   {
     HttpProtocolBuilder httpProtocol = http
       .baseUrl("https://github.com")
@@ -19,7 +20,8 @@ public class StressSimulation extends Simulation {
       .acceptHeader("image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8")
       .acceptEncodingHeader("gzip, deflate, br")
       .acceptLanguageHeader("en-US,en;q=0.9,he;q=0.8")
-      .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36");
+      .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36").maxConnectionsPerHost(70);
+    ;
     
     Map<CharSequence, String> headers_0 = new HashMap<>();
     headers_0.put("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
@@ -44,68 +46,79 @@ public class StressSimulation extends Simulation {
     
     String uri1 = "https://avatars.githubusercontent.com/u";
 
-    ScenarioBuilder scn = scenario("Stress")
-      .exec(
-        http("request_0")
-          .get("/GilEmanuel22")
-          .headers(headers_0)
-          .resources(
-            http("request_1")
-              .get(uri1 + "/108533998?v=4")
-              .headers(headers_1),
-            http("request_2")
-              .get(uri1 + "/91782705?v=4")
-              .headers(headers_1)
-          )
-      )
-      .pause(2)
-      .exec(
-        http("request_3")
-          .get("/maychook6")
-          .headers(headers_0)
-          .resources(
-            http("request_4")
-              .get(uri1 + "/91782705?v=4")
-              .headers(headers_1)
-          )
-      )
-      .pause(1)
-      .exec(
-        http("request_5")
-          .get("/RobiBar1")
-          .headers(headers_0)
-      )
-      .pause(1)
-      .exec(
-        http("request_6")
-          .get(uri1 + "/97502126?v=4")
-          .headers(headers_1)
-          .resources(
-            http("request_7")
-              .get(uri1 + "/91782705?v=4")
-              .headers(headers_1)
-          )
-      )
-      .pause(2)
-      .exec(
-        http("request_8")
-          .get("/YairBuryak")
-          .headers(headers_0)
-          .resources(
-            http("request_9")
-              .get(uri1 + "/104583338?v=4")
-              .headers(headers_1),
-            http("request_10")
-              .get(uri1 + "/91782705?v=4")
-              .headers(headers_1)
-          )
-      );
 
-    setUp(scn.injectOpen(atOnceUsers(70),
-            constantUsersPerSec(70).during(30),
-            rampUsersPerSec(70).to(0).during(10),
-            atOnceUsers(70),
-            constantUsersPerSec(70).during(30),
-            rampUsersPerSec(70).to(10).during(10)).protocols(httpProtocol));
+    ScenarioBuilder scn = scenario("Stress")
+            .exec(
+              http("request_0")
+                      .get("/GilEmanuel22")
+                      .headers(headers_0)
+                      .resources(
+                              http("request_1")
+                                      .get(uri1 + "/108533998?v=4")
+                                      .headers(headers_1),
+                              http("request_2")
+                                      .get(uri1 + "/91782705?v=4")
+                                      .headers(headers_1)
+                      )
+      )
+              .pause(2)
+              .exec(
+                      http("request_3")
+                              .get("/maychook6")
+                              .headers(headers_0)
+                              .resources(
+                                      http("request_4")
+                                              .get(uri1 + "/91782705?v=4")
+                                              .headers(headers_1)
+                              )
+              )
+              .pause(1)
+              .exec(
+                      http("request_5")
+                              .get("/RobiBar1")
+                              .headers(headers_0)
+              )
+              .pause(1)
+              .exec(
+                      http("request_6")
+                              .get(uri1 + "/97502126?v=4")
+                              .headers(headers_1)
+                              .resources(
+                                      http("request_7")
+                                              .get(uri1 + "/91782705?v=4")
+                                              .headers(headers_1)
+                              )
+              )
+              .pause(2)
+              .exec(
+                      http("request_8")
+                              .get("/YairBuryak")
+                              .headers(headers_0)
+                              .resources(
+                                      http("request_9")
+                                              .get(uri1 + "/104583338?v=4")
+                                              .headers(headers_1),
+                                      http("request_10")
+                                              .get(uri1 + "/91782705?v=4")
+                                              .headers(headers_1)
+                              )
+              ).pause(120);
+
+    setUp(scn.injectOpen(
+                    atOnceUsers(20),
+                    rampUsers(0).during(15),
+                    atOnceUsers(20),
+                    rampUsers(0).during(15),
+                    atOnceUsers(20),
+                    rampUsers(0).during(15),
+                    atOnceUsers(20),
+                    rampUsers(0).during(15),
+                    atOnceUsers(20),
+                    rampUsers(0).during(15),
+                    atOnceUsers(20),
+                    rampUsers(0).during(15),
+                    atOnceUsers(20),
+                    rampUsers(0).during(15)
+    ).protocols(httpProtocol));
   }
 }

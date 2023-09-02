@@ -20,7 +20,7 @@ public class LoadSimulation extends Simulation {
                 .acceptHeader("image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8")
                 .acceptEncodingHeader("gzip, deflate, br")
                 .acceptLanguageHeader("en-US,en;q=0.9,he;q=0.8")
-                .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36");
+                .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36").maxConnectionsPerHost(70);
 
         Map<CharSequence, String> headers_0 = new HashMap<>();
         headers_0.put("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
